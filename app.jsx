@@ -1,5 +1,6 @@
 /* Import Native Modules */
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, useSearchParams} from "react-router-dom";
 
 /* Import Custom Components */
 import Header3Sec from "@/sections/header/header_3/header_3_section";
@@ -8,6 +9,7 @@ import Pagination1PagePart from "./components/pagination/pagination_1/pagination
 
 const AppContainer = () => {
   const [headerHeight, setHeaderHeight] = useState(0);
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     const headerElem = document.querySelector("header");
@@ -15,6 +17,13 @@ const AppContainer = () => {
       setHeaderHeight(headerElem.offsetHeight);
     }
   }, []);
+
+
+
+  // Get a specific query parameter
+  const queryParam = searchParams.get("q");
+  console.log(queryParam);
+
 
 
   return (
