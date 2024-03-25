@@ -1,20 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, useSearchParams, useNavigate } from "react-router-dom";
+import { useSearchParams} from "react-router-dom";
 
 const Pagination1PagePart = () => {
-  const [searchParams, setSearchParams] = useSearchParams({ q: "" });
+  const [searchParams, setSearchParams] = useSearchParams();
   const pageCount = 10;
   const pageElements = [];
-  const navigate = useNavigate();
+
 
   const handlePageClick = (pageNumber) => {
-    // Update the URL with the new page number
-    /*const url = new URL(window.location.href);
-    url.searchParams.set("filter_results_page", pageNumber);
-    window.history.replaceState({}, "", url);*/
 
     setSearchParams({ q: pageNumber });
-    //navigate(`/search?q=10`);
+
   };
 
   for (let index = 0; index < pageCount; index++) {
