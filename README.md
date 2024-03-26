@@ -1,3 +1,3 @@
-# react_useSearchParams_implement
+# react_useSearchParams_implementation
 
 Implement useSearchParams for pagination.
